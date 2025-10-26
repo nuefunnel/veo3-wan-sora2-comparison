@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Wan vs Sora vs Veo 3 - Prompt Comparison Gallery</title>
+    <style>
+
+    body { font-family: 'Inter', 'Segoe UI', sans-serif; margin: 0; background: #f3f4f6; color: #1f2933; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: #111827; color: #f9fafb; padding: 2.5rem 0 2rem; }
+    header h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+    header p { margin: 0.35rem 0; max-width: 800px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    nav.category-nav { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    nav.category-nav a { background: rgba(255,255,255,0.12); color: #f9fafb; padding: 0.45rem 0.95rem; border-radius: 999px; font-size: 0.95rem; transition: background 0.2s; }
+    nav.category-nav a:hover { background: rgba(255,255,255,0.24); }
+    main { padding: 2rem 0 3rem; }
+    section { padding: 1rem 0 2.5rem; }
+    section h2 { font-size: 1.9rem; margin: 0 0 1.5rem; color: #0f172a; }
+    .prompt-card { background: #ffffff; border-radius: 1.1rem; padding: 1.75rem; margin-bottom: 1.75rem; box-shadow: 0 22px 40px rgba(15, 23, 42, 0.08); }
+    .prompt-title { margin: 0 0 1.2rem; font-size: 1.45rem; color: #111827; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .prompt-id { font-size: 0.9rem; color: #6b7280; }
+    .prompt-summary { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: start; }
+    .prompt-text-block { font-size: 1rem; line-height: 1.6; }
+    .prompt-text { margin: 0; }
+    .prompt-meta { margin: 0.75rem 0 0; font-size: 0.9rem; color: #6b7280; }
+    .context { margin: 0.55rem 0 0; font-size: 0.95rem; color: #4b5563; font-style: italic; }
+    .input-figure { margin: 0; }
+    .input-figure img { width: 100%; border-radius: 0.85rem; border: 1px solid #e5e7eb; }
+    .input-figure figcaption { margin-top: 0.45rem; font-size: 0.85rem; color: #6b7280; text-align: center; }
+    .media-grid { margin-top: 1.5rem; display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: start; }
+    .video-wrapper { background: #f9fafb; border-radius: 0.95rem; padding: 1rem; border: 1px solid #e5e7eb; display: flex; flex-direction: column; gap: 0.75rem; }
+    .video-wrapper h4 { margin: 0; font-size: 1.05rem; color: #0f172a; }
+    video { width: 100%; border-radius: 0.75rem; background: #000; }
+    .video-placeholder { padding: 2.4rem 1rem; text-align: center; border-radius: 0.75rem; border: 1px dashed #cbd5f5; color: #64748b; background: #f8fafc; font-size: 0.95rem; }
+    footer { padding: 2rem 0 3rem; background: #0f172a; color: #cbd5f5; }
+    footer p { margin: 0; text-align: center; font-size: 0.95rem; }
+    @media (max-width: 720px) {
+      header h1 { font-size: 1.9rem; }
+      section h2 { font-size: 1.65rem; }
+      .prompt-card { padding: 1.35rem; }
+    }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class='container'>
+        <h1>Wan vs Sora vs Veo 3 - Prompt Comparison Gallery</h1>
+        <p>Side-by-side comparison of Wan, Sora, and Veo 3 generations for prompts extracted from the "Veo 3: Video models are zero-shot learners and reasoners" paper. Each card shows the input description, reference image, and resulting videos grouped by the capability category highlighted in the paper.</p>
+        <p>Click a video to play. Use the navigation chips to jump between categories.</p>
+        <nav class='category-nav'>
+        <a href='#perception'>Perception</a>
+        <a href='#physics-and-materials'>Physics & Materials</a>
+        <a href='#editing-and-generation'>Editing & Generation</a>
+        <a href='#reasoning-and-puzzles'>Reasoning & Puzzles</a>
+        <a href='#robotics-and-dexterity'>Robotics & Dexterity</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+    <section id='perception'>
+      <div class='container'>
+        <h2>Perception</h2>
+        <article class='prompt-card'>
+          <h3 id='figure_10' class='prompt-title'>Figure 10 · Edge detection<span class='prompt-id'>(figure_10)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>All edges in this image become more salient by transforming into black outlines. Then, all objects fade away, with just the edges remaining on a white background. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 17</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_10.png' alt='Input reference for figure_10'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_10.png'>
+                <source src='final_output_prompt_manifest/figure_10.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_10.png'>
+                <source src='sora_output_videos/figure_10.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_10.png'>
+                <source src='veo3_original_videos/figure_10.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_11' class='prompt-title'>Figure 11 · Segmentation<span class='prompt-id'>(figure_11)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Create an animation of instance segmentation being performed on this photograph: each distinct entity is overlaid in a different flat color. Scene: • The animation starts from the provided, unaltered photograph. • The scene in the photograph is static and doesn’t move. • First, the background fades to {white, green}. • Then, the first entity is covered by a flat color, perfectly preserving its silhouette. • Then the second entity, too, is covered by a different flat color, perfectly preserving its silhouette. • One by one, each entity is covered by a different flat color. • Finally, all entities are covered with different colors. Camera: • Static shot without camera movement. • No pan. • No rotation. • No zoom. • No glitches or artifacts.</p>
+              <p class='prompt-meta'>Page 17</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_11.png' alt='Input reference for figure_11'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_11.png'>
+                <source src='final_output_prompt_manifest/figure_11.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_11.png'>
+                <source src='sora_output_videos/figure_11.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_11.png'>
+                <source src='veo3_original_videos/figure_11.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_12' class='prompt-title'>Figure 12 · Keypoint localization<span class='prompt-id'>(figure_12)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Add a bright blue dot at the tip of the branch on which the macaw is sitting. The macaw’s eye turns bright red. Everything else turns pitch black. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 17</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_12.png' alt='Input reference for figure_12'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_12.png'>
+                <source src='final_output_prompt_manifest/figure_12.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_12.png'>
+                <source src='sora_output_videos/figure_12.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_12.png'>
+                <source src='veo3_original_videos/figure_12.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_13' class='prompt-title'>Figure 13 · Super-resolution<span class='prompt-id'>(figure_13)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Perform superresolution on this image. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 17</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_13.png' alt='Input reference for figure_13'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_13.png'>
+                <source src='final_output_prompt_manifest/figure_13.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_13.png'>
+                <source src='sora_output_videos/figure_13.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_13.png'>
+                <source src='veo3_original_videos/figure_13.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_14' class='prompt-title'>Figure 14 · Blind deblurring<span class='prompt-id'>(figure_14)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Unblur image including background. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 18</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_14.png' alt='Input reference for figure_14'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_14.png'>
+                <source src='final_output_prompt_manifest/figure_14.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_14.png'>
+                <source src='veo3_original_videos/figure_14.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise' class='prompt-title'>Figure 15 · Blind denoising. Each quadrant was corrupted with a different type of noise. Clockwise<span class='prompt-id'>(figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Remove the noise from this image. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 18</p>
+              <p class='context'>Context: Clockwise from top left: Gaussian noise, salt-and-pepper noise, speckle noise, shot noise</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise.png' alt='Input reference for figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise.png'>
+                <source src='final_output_prompt_manifest/figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise.png'>
+                <source src='veo3_original_videos/figure_15_clockwise-from-top-left-gaussian-noise-salt-and-pepper-noise-speckle-noise-shot-noise.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_16' class='prompt-title'>Figure 16 · Low-light enhancing<span class='prompt-id'>(figure_16)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Fully restore the light in this image. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 18</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_16.png' alt='Input reference for figure_16'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_16.png'>
+                <source src='final_output_prompt_manifest/figure_16.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_16.png'>
+                <source src='veo3_original_videos/figure_16.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_17' class='prompt-title'>Figure 17 · Conjunctive search / binding problem<span class='prompt-id'>(figure_17)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The blue ball instantly begins to glow. Static camera perspective, no zoom no pan no movement no dolly no rotation.</p>
+              <p class='prompt-meta'>Page 18</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_17.png' alt='Input reference for figure_17'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_17.png'>
+                <source src='final_output_prompt_manifest/figure_17.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_17.png'>
+                <source src='sora_output_videos/figure_17.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_17.png'>
+                <source src='veo3_original_videos/figure_17.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_18' class='prompt-title'>Figure 18 · Dalmatian illusion understanding<span class='prompt-id'>(figure_18)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Static camera perspective.</p>
+              <p class='prompt-meta'>Page 19</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_18.png' alt='Input reference for figure_18'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_18.png'>
+                <source src='final_output_prompt_manifest/figure_18.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_18.png'>
+                <source src='sora_output_videos/figure_18.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_18.png'>
+                <source src='veo3_original_videos/figure_18.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_19' class='prompt-title'>Figure 19 · Shape (cue-conflict) understanding<span class='prompt-id'>(figure_19)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Transform the animal in this image into a sketch of the animal surrounded by its family.</p>
+              <p class='prompt-meta'>Page 19</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_19.png' alt='Input reference for figure_19'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_19.png'>
+                <source src='final_output_prompt_manifest/figure_19.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_19.png'>
+                <source src='sora_output_videos/figure_19.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_19.png'>
+                <source src='veo3_original_videos/figure_19.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_20' class='prompt-title'>Figure 20 · Rorschach blot interpretation<span class='prompt-id'>(figure_20)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The patterns transform into objects.</p>
+              <p class='prompt-meta'>Page 19</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_20.png' alt='Input reference for figure_20'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_20.png'>
+                <source src='final_output_prompt_manifest/figure_20.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_20.png'>
+                <source src='sora_output_videos/figure_20.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_20.png'>
+                <source src='veo3_original_videos/figure_20.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_21' class='prompt-title'>Figure 21 · Material properties<span class='prompt-id'>(figure_21)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The bunsen burner at the bottom turns on. Sped up time lapse. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 19</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_21.png' alt='Input reference for figure_21'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_21.png'>
+                <source src='final_output_prompt_manifest/figure_21.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_21.png'>
+                <source src='sora_output_videos/figure_21.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_21.png'>
+                <source src='veo3_original_videos/figure_21.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_29' class='prompt-title'>Figure 29 · Categorizing objects<span class='prompt-id'>(figure_29)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A person puts all the kids toys in the bucket. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 22</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_29.png' alt='Input reference for figure_29'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_29.png'>
+                <source src='final_output_prompt_manifest/figure_29.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_29.png'>
+                <source src='veo3_original_videos/figure_29.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_62' class='prompt-title'>Figure 62 · Monocular depth estimation<span class='prompt-id'>(figure_62)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The image transitions to a depth-map of the scene: Darker colors represent pixels further from the camera, lighter colors represent pixels closer to the camera. The exact color map to use is provided on the right side of the image. Static scene, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 42</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_62.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_62.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_63' class='prompt-title'>Figure 63 · Monocular surface normal estimation<span class='prompt-id'>(figure_63)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The image transitions to a surface- normal map of the scene: the red/green/blue color channel specify the direction of the surface-normal at each point, as illustrated on the right side of the image on a sphere. Static scene, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 42</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_63.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_63.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_70' class='prompt-title'>Figure 70 · Spot the difference<span class='prompt-id'>(figure_70)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>There are two images. The left image is different from the right image in 5 spots. Create a static, realistic, smooth animation where a cursor appears and points at each place where the left image is different from the right image. The cursor points one by one and only on the left image. Do not change anything in the right image. No pan. No zoom. No movement. Keep the image static.</p>
+              <p class='prompt-meta'>Page 44</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_70.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_70.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id='physics-and-materials'>
+      <div class='container'>
+        <h2>Physics & Materials</h2>
+        <article class='prompt-card'>
+          <h3 id='figure_22_rigid-body-top' class='prompt-title'>Figure 22 · Physics body transform. Rigid body (top)<span class='prompt-id'>(figure_22_rigid-body-top)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A person picks up the vase and puts it back on the table in a sideways orientation. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 20</p>
+              <p class='context'>Context: Rigid body (top)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_22_rigid-body-top.png' alt='Input reference for figure_22_rigid-body-top'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_22_rigid-body-top.png'>
+                <source src='final_output_prompt_manifest/figure_22_rigid-body-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_22_rigid-body-top.png'>
+                <source src='sora_output_videos/figure_22_rigid-body-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_22_rigid-body-top.png'>
+                <source src='veo3_original_videos/figure_22_rigid-body-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_22_soft-body-bottom' class='prompt-title'>Figure 22 · Physics body transform. Rigid body (top)<span class='prompt-id'>(figure_22_soft-body-bottom)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A person drapes a thin silk scarf over the vase. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 20</p>
+              <p class='context'>Context: Soft body (bottom)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_22_soft-body-bottom.png' alt='Input reference for figure_22_soft-body-bottom'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_22_soft-body-bottom.png'>
+                <source src='final_output_prompt_manifest/figure_22_soft-body-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_22_soft-body-bottom.png'>
+                <source src='sora_output_videos/figure_22_soft-body-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_22_soft-body-bottom.png'>
+                <source src='veo3_original_videos/figure_22_soft-body-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_23_on-earth-top' class='prompt-title'>Figure 23 · Gravity and air resistance. On earth (top)<span class='prompt-id'>(figure_23_on-earth-top)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The objects fall due to gravity. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 20</p>
+              <p class='context'>Context: On earth (top)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_23_on-earth-top.png' alt='Input reference for figure_23_on-earth-top'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_23_on-earth-top.png'>
+                <source src='final_output_prompt_manifest/figure_23_on-earth-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_23_on-earth-top.png'>
+                <source src='veo3_original_videos/figure_23_on-earth-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_23_on-the-moon-bottom' class='prompt-title'>Figure 23 · Gravity and air resistance. On earth (top)<span class='prompt-id'>(figure_23_on-the-moon-bottom)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The objects fall down on the moon due to gravity. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 20</p>
+              <p class='context'>Context: On the moon (bottom)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_23_on-the-moon-bottom.png' alt='Input reference for figure_23_on-the-moon-bottom'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_23_on-the-moon-bottom.png'>
+                <source src='final_output_prompt_manifest/figure_23_on-the-moon-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_23_on-the-moon-bottom.png'>
+                <source src='veo3_original_videos/figure_23_on-the-moon-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_24' class='prompt-title'>Figure 24 · Buoyancy<span class='prompt-id'>(figure_24)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The hand lets go of the object. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 21</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_24.png' alt='Input reference for figure_24'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_24.png'>
+                <source src='final_output_prompt_manifest/figure_24.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_24.png'>
+                <source src='veo3_original_videos/figure_24.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_24a' class='prompt-title'>Figure 24 · Buoyancy<span class='prompt-id'>(figure_24a)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The hand lets go of the object. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 21</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_24a.png' alt='Input reference for figure_24a'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_24a.png'>
+                <source src='final_output_prompt_manifest/figure_24a.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_24a.png'>
+                <source src='veo3_original_videos/figure_24a.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_27_glass-top' class='prompt-title'>Figure 27 · Material optics. Glass (top)<span class='prompt-id'>(figure_27_glass-top)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A giant glass sphere rolls through the room. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 22</p>
+              <p class='context'>Context: Glass (top)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_27_glass-top.png' alt='Input reference for figure_27_glass-top'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_27_glass-top.png'>
+                <source src='final_output_prompt_manifest/figure_27_glass-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_27_glass-top.png'>
+                <source src='sora_output_videos/figure_27_glass-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_27_glass-top.png'>
+                <source src='veo3_original_videos/figure_27_glass-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_27_mirror-bottom' class='prompt-title'>Figure 27 · Material optics. Glass (top)<span class='prompt-id'>(figure_27_mirror-bottom)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A giant mirror-polish metal sphere rolls through the room. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 22</p>
+              <p class='context'>Context: Mirror (bottom)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_27_mirror-bottom.png' alt='Input reference for figure_27_mirror-bottom'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_27_mirror-bottom.png'>
+                <source src='final_output_prompt_manifest/figure_27_mirror-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_27_mirror-bottom.png'>
+                <source src='sora_output_videos/figure_27_mirror-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_27_mirror-bottom.png'>
+                <source src='veo3_original_videos/figure_27_mirror-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_28_additive-lights-top' class='prompt-title'>Figure 28 · Color mixing. Additive (lights, top)<span class='prompt-id'>(figure_28_additive-lights-top)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The spotlight on the left changes color to green, and the spotlight on the right changes color to blue.</p>
+              <p class='prompt-meta'>Page 22</p>
+              <p class='context'>Context: Additive (lights, top)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_28_additive-lights-top.png' alt='Input reference for figure_28_additive-lights-top'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_28_additive-lights-top.png'>
+                <source src='final_output_prompt_manifest/figure_28_additive-lights-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_28_additive-lights-top.png'>
+                <source src='sora_output_videos/figure_28_additive-lights-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_28_additive-lights-top.png'>
+                <source src='veo3_original_videos/figure_28_additive-lights-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_28_subtractive-paints-bottom' class='prompt-title'>Figure 28 · Color mixing. Additive (lights, top)<span class='prompt-id'>(figure_28_subtractive-paints-bottom)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A paintbrush mixes these colors together thoroughly until they blend completely. Static camera, no pan, no zoom.</p>
+              <p class='prompt-meta'>Page 22</p>
+              <p class='context'>Context: Subtractive (paints, bottom)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_28_subtractive-paints-bottom.png' alt='Input reference for figure_28_subtractive-paints-bottom'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_28_subtractive-paints-bottom.png'>
+                <source src='final_output_prompt_manifest/figure_28_subtractive-paints-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_28_subtractive-paints-bottom.png'>
+                <source src='veo3_original_videos/figure_28_subtractive-paints-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_64' class='prompt-title'>Figure 64 · Force & motion prompting, inspired by [91, 92]. Force prompting (top)<span class='prompt-id'>(figure_64)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The balls move in the direction indicated by the arrows. Balls without an arrow don't move. Static scene, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 42</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_64.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_64.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_72' class='prompt-title'>Figure 72 · Glass falling<span class='prompt-id'>(figure_72)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The object falls. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 44</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_72.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_72.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_73' class='prompt-title'>Figure 73 · Collisions<span class='prompt-id'>(figure_73)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The two objects collide in slow motion. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 44</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_73.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_73.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id='editing-and-generation'>
+      <div class='container'>
+        <h2>Editing & Generation</h2>
+        <article class='prompt-card'>
+          <h3 id='figure_32' class='prompt-title'>Figure 32 · Background removal<span class='prompt-id'>(figure_32)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The background changes to white. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 23</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_32.png' alt='Input reference for figure_32'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_32.png'>
+                <source src='final_output_prompt_manifest/figure_32.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_32.png'>
+                <source src='veo3_original_videos/figure_32.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_33' class='prompt-title'>Figure 33 · Style transfer<span class='prompt-id'>(figure_33)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The scene transforms into the style of a Hundertwasser painting, without changing perspective or orientation; the macaw does not move. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 24</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_33.png' alt='Input reference for figure_33'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_33.png'>
+                <source src='final_output_prompt_manifest/figure_33.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_33.png'>
+                <source src='veo3_original_videos/figure_33.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_34' class='prompt-title'>Figure 34 · Colorization<span class='prompt-id'>(figure_34)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Perform colorization on this image. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 24</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_34.png' alt='Input reference for figure_34'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_34.png'>
+                <source src='final_output_prompt_manifest/figure_34.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_34.png'>
+                <source src='veo3_original_videos/figure_34.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_35' class='prompt-title'>Figure 35 · Inpainting<span class='prompt-id'>(figure_35)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The white triangles become smaller and smaller, then disappear altogether. Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 24</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_35.png' alt='Input reference for figure_35'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_35.png'>
+                <source src='final_output_prompt_manifest/figure_35.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_35.png'>
+                <source src='veo3_original_videos/figure_35.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_36' class='prompt-title'>Figure 36 · Outpainting<span class='prompt-id'>(figure_36)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Rapidly zoom out of this static image, revealing what’s around it. The camera just zooms back, while the scene itself and everything in it does not move or change at all, it’s a static image.</p>
+              <p class='prompt-meta'>Page 24</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_36.png' alt='Input reference for figure_36'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_36.png'>
+                <source src='final_output_prompt_manifest/figure_36.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_36.png'>
+                <source src='veo3_original_videos/figure_36.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_37' class='prompt-title'>Figure 37 · Text manipulation<span class='prompt-id'>(figure_37)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Animation of the text rapidly changing so that it is made out of different types of candy (top left text) and pretzel sticks (bottom right text). Static camera perspective, no zoom or pan.</p>
+              <p class='prompt-meta'>Page 25</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_37.png' alt='Input reference for figure_37'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_37.png'>
+                <source src='final_output_prompt_manifest/figure_37.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_37.png'>
+                <source src='sora_output_videos/figure_37.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_37.png'>
+                <source src='veo3_original_videos/figure_37.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_38' class='prompt-title'>Figure 38 · Image editing with doodles<span class='prompt-id'>(figure_38)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Changes happen instantly.</p>
+              <p class='prompt-meta'>Page 25</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_38.png' alt='Input reference for figure_38'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_38.png'>
+                <source src='final_output_prompt_manifest/figure_38.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_38.png'>
+                <source src='veo3_original_videos/figure_38.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_39' class='prompt-title'>Figure 39 · Scene composition<span class='prompt-id'>(figure_39)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A smooth animation blends the zebra naturally into the scene, removing the background of the zebra image, so that the angle, lighting, and shading look realistic. The final scene perfectly incorporates the zebra into the scene.</p>
+              <p class='prompt-meta'>Page 25</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_39.png' alt='Input reference for figure_39'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_39.png'>
+                <source src='final_output_prompt_manifest/figure_39.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_39.png'>
+                <source src='veo3_original_videos/figure_39.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_40' class='prompt-title'>Figure 40 · Single-image novel view synthesis<span class='prompt-id'>(figure_40)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Create a smooth, realistic animation where the camera seems to rotate around the object showing the object from all the sides. Do not change anything else. No zoom. No pan.</p>
+              <p class='prompt-meta'>Page 25</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_40.png' alt='Input reference for figure_40'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_40.png'>
+                <source src='final_output_prompt_manifest/figure_40.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_40.png'>
+                <source src='veo3_original_videos/figure_40.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_41' class='prompt-title'>Figure 41 · 3D-aware reposing<span class='prompt-id'>(figure_41)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The knight turns to face to the right and drops on one knee, lifting the shield above his head to protect himself and resting the hilt of his weapon on the ground.</p>
+              <p class='prompt-meta'>Page 26</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_41.png' alt='Input reference for figure_41'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_41.png'>
+                <source src='final_output_prompt_manifest/figure_41.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_41.png'>
+                <source src='veo3_original_videos/figure_41.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_42' class='prompt-title'>Figure 42 · Transfiguration<span class='prompt-id'>(figure_42)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A magical spell smoothly transforms the structure of the teacup into a mouse.</p>
+              <p class='prompt-meta'>Page 26</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_42.png' alt='Input reference for figure_42'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_42.png'>
+                <source src='final_output_prompt_manifest/figure_42.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_42.png'>
+                <source src='veo3_original_videos/figure_42.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_43' class='prompt-title'>Figure 43 · Professional headshot generation<span class='prompt-id'>(figure_43)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Turn this selfie into a professional headshot for LinkedIn.</p>
+              <p class='prompt-meta'>Page 26</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_43.png' alt='Input reference for figure_43'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_43.png'>
+                <source src='final_output_prompt_manifest/figure_43.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_43.png'>
+                <source src='veo3_original_videos/figure_43.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_46' class='prompt-title'>Figure 46 · Drawing<span class='prompt-id'>(figure_46)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A person draws a square. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 27</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_46.png' alt='Input reference for figure_46'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_46.png'>
+                <source src='final_output_prompt_manifest/figure_46.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_46.png'>
+                <source src='veo3_original_videos/figure_46.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id='reasoning-and-puzzles'>
+      <div class='container'>
+        <h2>Reasoning & Puzzles</h2>
+        <article class='prompt-card'>
+          <h3 id='figure_25' class='prompt-title'>Figure 25 · Visual Jenga, inspired by [51]<span class='prompt-id'>(figure_25)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A hand quickly removes each of the items in this image, one at a time.</p>
+              <p class='prompt-meta'>Page 21</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_25.png' alt='Input reference for figure_25'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_25.png'>
+                <source src='final_output_prompt_manifest/figure_25.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_25.png'>
+                <source src='sora_output_videos/figure_25.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_25.png'>
+                <source src='veo3_original_videos/figure_25.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_26' class='prompt-title'>Figure 26 · Object packing<span class='prompt-id'>(figure_26)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A person puts all the objects that can fit in the backpack inside of it. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 21</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_26.png' alt='Input reference for figure_26'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_26.png'>
+                <source src='final_output_prompt_manifest/figure_26.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_26.png'>
+                <source src='sora_output_videos/figure_26.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_26.png'>
+                <source src='veo3_original_videos/figure_26.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_30_generation-of-variations-middle' class='prompt-title'>Figure 30 · Character recognition, generation, and parsing, inspired by the Omniglot dataset [52]<span class='prompt-id'>(figure_30_generation-of-variations-middle)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The page is filled line-by-line with hand-written practice variations of the symbol.</p>
+              <p class='prompt-meta'>Page 23</p>
+              <p class='context'>Context: Generation of variations (middle)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_30_generation-of-variations-middle.png' alt='Input reference for figure_30_generation-of-variations-middle'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_30_generation-of-variations-middle.png'>
+                <source src='final_output_prompt_manifest/figure_30_generation-of-variations-middle.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_30_generation-of-variations-middle.png'>
+                <source src='veo3_original_videos/figure_30_generation-of-variations-middle.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_30_parsing-into-parts-bottom' class='prompt-title'>Figure 30 · Character recognition, generation, and parsing, inspired by the Omniglot dataset [52]<span class='prompt-id'>(figure_30_parsing-into-parts-bottom)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Stroke-by-stroke, a replica of the symbol is drawn on the right.</p>
+              <p class='prompt-meta'>Page 23</p>
+              <p class='context'>Context: Parsing into parts (bottom)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_30_color-and-numbers-in-final-frame-are-added-post-hoc-to-show-stroke-order.png' alt='Input reference for figure_30_parsing-into-parts-bottom'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_30_color-and-numbers-in-final-frame-are-added-post-hoc-to-show-stroke-order.png'>
+                <source src='final_output_prompt_manifest/figure_30_parsing-into-parts-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_30_color-and-numbers-in-final-frame-are-added-post-hoc-to-show-stroke-order.png'>
+                <source src='veo3_original_videos/figure_30_parsing-into-parts-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_30_recognition-top' class='prompt-title'>Figure 30 · Character recognition, generation, and parsing, inspired by the Omniglot dataset [52]<span class='prompt-id'>(figure_30_recognition-top)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The background of the grid cell with the same symbol as the one indicated on the right turns red. All other grid cells remain unchanged. After that, a spinning color wheel appears in the top right corner.</p>
+              <p class='prompt-meta'>Page 23</p>
+              <p class='context'>Context: Recognition (top)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_30_recognition-top.png' alt='Input reference for figure_30_recognition-top'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_30_recognition-top.png'>
+                <source src='final_output_prompt_manifest/figure_30_recognition-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_30_recognition-top.png'>
+                <source src='veo3_original_videos/figure_30_recognition-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_31' class='prompt-title'>Figure 31 · Memory of world states<span class='prompt-id'>(figure_31)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The camera zooms in to give a close up of the person looking out the window, then zooms back out to return to the original view.</p>
+              <p class='prompt-meta'>Page 23</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_31.png' alt='Input reference for figure_31'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_31.png'>
+                <source src='final_output_prompt_manifest/figure_31.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_31.png'>
+                <source src='veo3_original_videos/figure_31.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_47' class='prompt-title'>Figure 47 · Visual instruction generation<span class='prompt-id'>(figure_47)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A montage clearly showing each step to roll a burrito.</p>
+              <p class='prompt-meta'>Page 28</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_47.png' alt='Input reference for figure_47'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_47.png'>
+                <source src='final_output_prompt_manifest/figure_47.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_47.png'>
+                <source src='sora_output_videos/figure_47.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_47.png'>
+                <source src='veo3_original_videos/figure_47.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_56' class='prompt-title'>Figure 56 · Water puzzle solving<span class='prompt-id'>(figure_56)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The tap is turned on and water starts flowing rapidly filling the containers. Create a smooth, static animation showing the containers getting filled with water in the correct order.</p>
+              <p class='prompt-meta'>Page 30</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_56.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata'>
+                <source src='sora_output_videos/figure_56.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_56.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_57' class='prompt-title'>Figure 57 · Maze solving<span class='prompt-id'>(figure_57)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Without crossing any black boundary, the grey mouse from the corner skillfully navigates the maze by walking around until it finds the yellow cheese.</p>
+              <p class='prompt-meta'>Page 30</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_57.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata'>
+                <source src='sora_output_videos/figure_57.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_57.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_59' class='prompt-title'>Figure 59 · Rule extrapolation inspired by ARC-AGI [84]<span class='prompt-id'>(figure_59)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Modify the lower-right grid to adhere to the rule established by the other grids. You can fill cells, clear cells, or change a cell’s color. Only modify the lower-right grid, don’t modify any of the other grids. Static scene, no zoom, no pan, no dolly.</p>
+              <p class='prompt-meta'>Page 30</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_59.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_59.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_66' class='prompt-title'>Figure 66 · Connect the path puzzle<span class='prompt-id'>(figure_66)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The path connecting the boy to the object starts glowing slowly. Nothing else changes. No zoom, no pan, no dolly.</p>
+              <p class='prompt-meta'>Page 43</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_66.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_66.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_67' class='prompt-title'>Figure 67 · Five letter word search<span class='prompt-id'>(figure_67)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Generate a static video animation using the provided letter grid. The task is to highlight the only 5-letter English word CHEAT, which may be oriented in any direction (horizontally, vertically, or diagonally). The animation should consist of a semi-transparent red rectangle with rounded corners smoothly fading into view, perfectly encapsulating the five letters of the word. The rectangle should have a subtle, soft glow. Do not change anything else in the image. The camera must remain locked in place with no movement. No zoom, no pan, no dolly.</p>
+              <p class='prompt-meta'>Page 43</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_67.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_67.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_68' class='prompt-title'>Figure 68 · Eulerian path<span class='prompt-id'>(figure_68)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Create a smooth animation where a red pen traces all existing edges in a continuous path without lifting the pen. All edges need to be traced. Do not visit any edge twice and do not lift the pen. No zoom, no pan.</p>
+              <p class='prompt-meta'>Page 43</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_68.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_68.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_69' class='prompt-title'>Figure 69 · Solving system of linear equations<span class='prompt-id'>(figure_69)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A hand appears and solves the set of linear equations. It replaces the x, y, z matrix with their correct values that solves the equation. Do not change anything else.</p>
+              <p class='prompt-meta'>Page 44</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_69.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_69.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_71' class='prompt-title'>Figure 71 · Visual IQ test<span class='prompt-id'>(figure_71)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Create a static, smooth, animation that solves the puzzle in the given image. The correct pattern should appear at the bottom right to solve the puzzle. Do not change anything else in the picture. No zoom, no pan, no dolly</p>
+              <p class='prompt-meta'>Page 44</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_71.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_71.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_74' class='prompt-title'>Figure 74 · Tiling puzzles. Jigsaw puzzle (top)<span class='prompt-id'>(figure_74)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A hand takes the fitting puzzle piece from the right, rotates it to be in the correct orientation, then puts it into the hole, completing the puzzle. Static scene, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 45</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_74.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_74.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_75' class='prompt-title'>Figure 75 · Bottleneck<span class='prompt-id'>(figure_75)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A person tries to put the golf ball in the vase. Static camera, no pan, no zoom, no dolly..</p>
+              <p class='prompt-meta'>Page 45</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_75.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata'>
+                <source src='sora_output_videos/figure_75.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_75.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id='robotics-and-dexterity'>
+      <div class='container'>
+        <h2>Robotics & Dexterity</h2>
+        <article class='prompt-card'>
+          <h3 id='figure_44_jar-opening-top' class='prompt-title'>Figure 44 · Dexterous manipulation. Jar opening (top)<span class='prompt-id'>(figure_44_jar-opening-top)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Use common sense and have the two robot hands attached to robot arms open the jar, like how a human would.</p>
+              <p class='prompt-meta'>Page 27</p>
+              <p class='context'>Context: Jar opening (top)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_44_jar-opening-top.png' alt='Input reference for figure_44_jar-opening-top'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_jar-opening-top.png'>
+                <source src='final_output_prompt_manifest/figure_44_jar-opening-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_jar-opening-top.png'>
+                <source src='sora_output_videos/figure_44_jar-opening-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_jar-opening-top.png'>
+                <source src='veo3_original_videos/figure_44_jar-opening-top.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_44_rotating-baoding-balls-bottom' class='prompt-title'>Figure 44 · Dexterous manipulation. Jar opening (top)<span class='prompt-id'>(figure_44_rotating-baoding-balls-bottom)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A human hand holds two metal Baoding balls. The fingers, including the thumb, index, and middle finger, skillfully manipulate the balls, causing them to rotate smoothly like two planets orbiting around each other and continuously in the palm, one ball circling the other in a fluid motion.</p>
+              <p class='prompt-meta'>Page 27</p>
+              <p class='context'>Context: Rotating Baoding balls (bottom)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_44_rotating-baoding-balls-bottom.png' alt='Input reference for figure_44_rotating-baoding-balls-bottom'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_rotating-baoding-balls-bottom.png'>
+                <source src='final_output_prompt_manifest/figure_44_rotating-baoding-balls-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_rotating-baoding-balls-bottom.png'>
+                <source src='sora_output_videos/figure_44_rotating-baoding-balls-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_rotating-baoding-balls-bottom.png'>
+                <source src='veo3_original_videos/figure_44_rotating-baoding-balls-bottom.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_44_throwing-and-catching-middle' class='prompt-title'>Figure 44 · Dexterous manipulation. Jar opening (top)<span class='prompt-id'>(figure_44_throwing-and-catching-middle)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Use common sense and have the two robot hands attached to robot arms throw the ball in the air, the ball goes up off the screen, hands move to positions to catch the ball, and catch the falling ball, like how a human would.</p>
+              <p class='prompt-meta'>Page 27</p>
+              <p class='context'>Context: Throwing and catching (middle)</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_44_throwing-and-catching-middle.png' alt='Input reference for figure_44_throwing-and-catching-middle'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_throwing-and-catching-middle.png'>
+                <source src='final_output_prompt_manifest/figure_44_throwing-and-catching-middle.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_44_throwing-and-catching-middle.png'>
+                <source src='veo3_original_videos/figure_44_throwing-and-catching-middle.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_45' class='prompt-title'>Figure 45 · Affordance recognition<span class='prompt-id'>(figure_45)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The robot hands mounted on robot arms pick up the hammer, naturally like how a human would.</p>
+              <p class='prompt-meta'>Page 27</p>
+            </div>
+            <figure class='input-figure'>
+              <img src='appendix_A_inputs/figure_45.png' alt='Input reference for figure_45'>
+              <figcaption>Input reference</figcaption>
+            </figure>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_45.png'>
+                <source src='final_output_prompt_manifest/figure_45.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata' poster='appendix_A_inputs/figure_45.png'>
+                <source src='veo3_original_videos/figure_45.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_58' class='prompt-title'>Figure 58 · Robot navigation<span class='prompt-id'>(figure_58)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The robot drives to the blue area. Static camera perspective, no movement no zoom no scan no pan.</p>
+              <p class='prompt-meta'>Page 30</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_58.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <video controls preload='metadata'>
+                <source src='sora_output_videos/figure_58.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_58.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_65' class='prompt-title'>Figure 65 · Tying the knot<span class='prompt-id'>(figure_65)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>A knot is tied connecting these two rope ends.</p>
+              <p class='prompt-meta'>Page 43</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_65.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_65.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_76' class='prompt-title'>Figure 76 · Laundry folding<span class='prompt-id'>(figure_76)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>Generate a video of two metal robotic arms properly folding the t-shirt on the table.</p>
+              <p class='prompt-meta'>Page 45</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_76.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_76.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+        <article class='prompt-card'>
+          <h3 id='figure_77' class='prompt-title'>Figure 77 · Motion planning; inspired by the piano mover’s problem<span class='prompt-id'>(figure_77)</span></h3>
+          <div class='prompt-summary'>
+            <div class='prompt-text-block'>
+              <p class='prompt-text'>The red couch slides from the left room over into the right room, skillfully maneuvering to fit through the doorways without bumping into the walls. The walls are fixed: they don’t shift or disappear, and no new walls are introduced. Static camera, no pan, no zoom, no dolly.</p>
+              <p class='prompt-meta'>Page 46</p>
+            </div>
+          </div>
+          <div class='media-grid'>
+            <div class='video-wrapper'>
+              <h4>Wan Output</h4>
+              <video controls preload='metadata'>
+                <source src='final_output_prompt_manifest/figure_77.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Sora Output</h4>
+              <div class='video-placeholder'>No Sora generation available.</div>
+            </div>
+            <div class='video-wrapper'>
+              <h4>Veo 3 Reference</h4>
+              <video controls preload='metadata'>
+                <source src='veo3_original_videos/figure_77.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    </main>
+    <footer>
+      <div class='container'>
+        <p>Generated for local review - 67 prompts covered</p>
+      </div>
+    </footer>
+  </body>
+</html>

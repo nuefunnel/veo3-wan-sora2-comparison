@@ -1,0 +1,24 @@
+# Exclude development files
+.env
+.venv/
+.uv-cache/
+__pycache__/
+*.pyc
+
+# Exclude source data
+*.json
+*.txt
+*.md
+*.pdf
+*.tsv
+scripts/
+
+# Exclude unused media directories
+appendix_A_extra_images/
+appendix_A_images/
+extracted_images/
+output_videos/
+sora_tmp_inputs/
+
+# Exclude other HTML files (keeping only wan_vs_sora_comparison.html)
+veo3_site.html
